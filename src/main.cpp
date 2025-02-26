@@ -30,7 +30,7 @@ SDL_GPUShader *loadShader(SDL_GPUDevice *device, const char *filename, SDL_Shade
 
 bool createSDLGPUContext(SDLGPUContext &ctx)
 {
-    ctx.device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_MSL, true, NULL);
+    ctx.device = SDL_CreateGPUDevice(SDL_GPU_SHADERFORMAT_MSL | SDL_GPU_SHADERFORMAT_SPIRV, true, NULL);
     if (ctx.device == nullptr)
     {
         SDL_Log("SDL_CreateGPUDevice failed: %s", SDL_GetError());
